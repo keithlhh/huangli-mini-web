@@ -1,6 +1,6 @@
 const config = {
-  projectName: 'huangli-mini-web',
-  date: '2022-4-14',
+  projectName: 'myApp1111',
+  date: '2022-4-15',
   designWidth: 750,
   deviceRatio: {
     640: 2.34 / 2,
@@ -18,7 +18,7 @@ const config = {
     options: {
     }
   },
-  framework: 'react',
+  framework: 'preact',
   mini: {
     postcss: {
       pxtransform: {
