@@ -1,0 +1,23 @@
+.card {
+    margin-top: 30px;
+}
+.good {
+    .goodIcon {
+        padding: 1px 30px;
+        border-radius: 8px;
+        background-color: green;
+        color: white;
+    }
+    color: green;
+}
+
+.bad {
+    margin-top: 20px;
+    color: red;
+    .badIcon {
+        padding: 1px 30px;
+        border-radius: 8px;
+        background-color: red;
+        color: white;
+    }
+}

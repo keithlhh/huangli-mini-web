@@ -1,0 +1,23 @@
+.userContainer {
+    .header {
+        padding: 70px 0 50px 0;
+        color: white;
+        width: 100%;
+        text-align: center;
+        height: 200px;
+        background-image: linear-gradient(#E93B3D, #e6543e);
+        .avatar {
+            display: inline-block;
+        }
+        .userName {
+            margin-top: 10px;
+        }
+    }
+    .listWrapper {
+        overflow: hidden;
+        min-height: 700px;
+        width: 92%;
+        margin: -40px auto 0 auto;
+        border-radius: 30px;
+    }
+}
