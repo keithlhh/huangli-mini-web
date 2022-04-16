@@ -1,11 +1,30 @@
 import { Component } from 'react'
 import { View, Text } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
+import { AtButton, AtTabBar } from 'taro-ui'
+import Calendar from '../../components/Calendar'
+import Taro from '@tarojs/taro'
 
-import "taro-ui/dist/style/components/button.scss" // 按需引入
-import './index.scss'
-
+const TITLE_MAP = {
+  0: '万年历',
+  1: '星座',
+  2: '我的'
+}
 export default class Index extends Component {
+
+  constructor () {
+    super(...arguments)
+    this.state = {
+      current: 0
+    }
+  }
+  handleClick (value) {
+    Taro.setNavigationBarTitle({
+      title: TITLE_MAP[value]
+    })
+    this.setState({
+      current: value
+    })
+  }
 
   componentWillMount () { }
 
@@ -20,12 +39,19 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
-        <AtButton type='primary'>I need Taro UI</AtButton>
-        <Text>Taro UI 支持 Vue 了吗？</Text>
-        <AtButton type='primary' circle={true}>支持</AtButton>
-        <Text>共建？</Text>
-        <AtButton type='secondary' circle={true}>来</AtButton>
+        {
+          this.state.current === 0 ? <Calendar /> : null
+        }
+        <AtTabBar
+          fixed
+          tabList={[
+            { title: '日历', iconType: 'home', text: '' },
+            { title: '星座', iconType: 'star' },
+            { title: '我的', iconType: 'user', text: '100', max: 99 }
+          ]}
+          onClick={this.handleClick.bind(this)}
+          current={this.state.current}
+        />
       </View>
     )
   }
